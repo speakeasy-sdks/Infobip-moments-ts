@@ -34,13 +34,13 @@ export class GetFormsResponse extends SpeakeasyBase {
    * Bad Request
    */
   @SpeakeasyMetadata()
-  eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException?: shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException;
+  apiException?: shared.ApiException;
 
   /**
    * Successful Response
    */
   @SpeakeasyMetadata()
-  eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormListDto?: shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormListDto;
+  apiFormListDto?: shared.ApiFormListDto;
 
   @SpeakeasyMetadata()
   body?: Uint8Array;

@@ -25,16 +25,16 @@ Creates or updates a person and adds it to Flow
 import { Infobip } from "infobip-moments";
 import { AddPeopleToFlowResponse } from "infobip-moments/dist/sdk/models/operations";
 import {
-  NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2GenderEnum,
-  NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2ModifiedFromEnum,
-  NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2OriginEnum,
-  NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2TypeEnum,
+  IamPersonV2GenderEnum,
+  IamPersonV2ModifiedFromEnum,
+  IamPersonV2OriginEnum,
+  IamPersonV2TypeEnum,
 } from "infobip-moments/dist/sdk/models/shared";
 
 const sdk = new Infobip();
 
 sdk.moments.addPeopleToFlow({
-  nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0FlowPersonRequest: {
+  flowPersonRequest: {
     flowVariables: {
       "quas": {
         "nulla": "voluptas",
@@ -585,7 +585,7 @@ sdk.moments.addPeopleToFlow({
       },
       externalId: "fuga",
       firstName: "Claire",
-      gender: NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2GenderEnum.Female,
+      gender: IamPersonV2GenderEnum.Female,
       id: 898760,
       integrations: {
         salesforce: {
@@ -596,13 +596,13 @@ sdk.moments.addPeopleToFlow({
       lastName: "Boyle",
       middleName: "et",
       modifiedAt: "ducimus",
-      modifiedFrom: NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2ModifiedFromEnum.Dynamics,
-      origin: NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2OriginEnum.Dynamics,
+      modifiedFrom: IamPersonV2ModifiedFromEnum.Dynamics,
+      origin: IamPersonV2OriginEnum.Dynamics,
       profilePicture: "suscipit",
       tags: [
         "quasi",
       ],
-      type: NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2TypeEnum.Customer,
+      type: IamPersonV2TypeEnum.Customer,
     },
   },
   campaignId: 984934,
@@ -629,10 +629,7 @@ Use this method to get an active form by its ID.
 ```typescript
 import { Infobip } from "infobip-moments";
 import { GetFormResponse } from "infobip-moments/dist/sdk/models/operations";
-import {
-  EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ActionAfterSubmissionTypeEnum,
-  EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDtoComponentEnum,
-} from "infobip-moments/dist/sdk/models/shared";
+import { ActionAfterSubmissionTypeEnum, FormElementDtoComponentEnum } from "infobip-moments/dist/sdk/models/shared";
 
 const sdk = new Infobip();
 
@@ -656,10 +653,7 @@ Use this method to get a list of active forms.
 ```typescript
 import { Infobip } from "infobip-moments";
 import { GetFormsResponse } from "infobip-moments/dist/sdk/models/operations";
-import {
-  EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ActionAfterSubmissionTypeEnum,
-  EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDtoComponentEnum,
-} from "infobip-moments/dist/sdk/models/shared";
+import { ActionAfterSubmissionTypeEnum, FormElementDtoComponentEnum } from "infobip-moments/dist/sdk/models/shared";
 
 const sdk = new Infobip();
 

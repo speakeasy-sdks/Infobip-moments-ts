@@ -3,24 +3,21 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ActionAfterSubmission } from "./eightytwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93actionaftersubmission";
-import { EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDto } from "./eightytwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93formelementdto";
+import { ActionAfterSubmission } from "./actionaftersubmission";
+import { FormElementDto } from "./formelementdto";
 import { Expose, Transform, Type } from "class-transformer";
 
 /**
  * Successful Response
  */
-export class EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormDto extends SpeakeasyBase {
+export class ApiFormDto extends SpeakeasyBase {
   /**
    * Action after the submission
    */
   @SpeakeasyMetadata()
   @Expose({ name: "actionAfterSubmission" })
-  @Type(
-    () =>
-      EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ActionAfterSubmission
-  )
-  actionAfterSubmission?: EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ActionAfterSubmission;
+  @Type(() => ActionAfterSubmission)
+  actionAfterSubmission?: ActionAfterSubmission;
 
   /**
    * Time when form was created
@@ -33,16 +30,10 @@ export class EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2
   /**
    * List of form fields
    */
-  @SpeakeasyMetadata({
-    elemType:
-      EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDto,
-  })
+  @SpeakeasyMetadata({ elemType: FormElementDto })
   @Expose({ name: "elements" })
-  @Type(
-    () =>
-      EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDto
-  )
-  elements: EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDto[];
+  @Type(() => FormElementDto)
+  elements: FormElementDto[];
 
   /**
    * Form identifier

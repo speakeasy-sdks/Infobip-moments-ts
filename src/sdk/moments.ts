@@ -66,7 +66,7 @@ export class Moments {
     try {
       [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
         req,
-        "nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0FlowPersonRequest",
+        "flowPersonRequest",
         "json"
       );
     } catch (e: unknown) {
@@ -116,11 +116,10 @@ export class Moments {
         break;
       case [400, 404, 500].includes(httpRes?.status):
         if (utils.matchContentType(contentType, `application/json`)) {
-          res.nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse =
-            utils.objectToClass(
-              httpRes?.data,
-              shared.NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse
-            );
+          res.exceptionResponse = utils.objectToClass(
+            httpRes?.data,
+            shared.ExceptionResponse
+          );
         }
         break;
     }
@@ -175,11 +174,10 @@ export class Moments {
     switch (true) {
       case httpRes?.status == 200:
         if (utils.matchContentType(contentType, `application/json`)) {
-          res.eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormDto =
-            utils.objectToClass(
-              httpRes?.data,
-              shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormDto
-            );
+          res.apiFormDto = utils.objectToClass(
+            httpRes?.data,
+            shared.ApiFormDto
+          );
         }
         if (utils.matchContentType(contentType, `application/xml`)) {
           const resBody: string = JSON.stringify(httpRes?.data, null, 0);
@@ -198,11 +196,10 @@ export class Moments {
           res.body = out;
         }
         if (utils.matchContentType(contentType, `application/json`)) {
-          res.eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException =
-            utils.objectToClass(
-              httpRes?.data,
-              shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException
-            );
+          res.apiException = utils.objectToClass(
+            httpRes?.data,
+            shared.ApiException
+          );
         }
         break;
     }
@@ -259,11 +256,10 @@ export class Moments {
     switch (true) {
       case httpRes?.status == 200:
         if (utils.matchContentType(contentType, `application/json`)) {
-          res.eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormListDto =
-            utils.objectToClass(
-              httpRes?.data,
-              shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormListDto
-            );
+          res.apiFormListDto = utils.objectToClass(
+            httpRes?.data,
+            shared.ApiFormListDto
+          );
         }
         if (utils.matchContentType(contentType, `application/xml`)) {
           const resBody: string = JSON.stringify(httpRes?.data, null, 0);
@@ -282,11 +278,10 @@ export class Moments {
           res.body = out;
         }
         if (utils.matchContentType(contentType, `application/json`)) {
-          res.eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException =
-            utils.objectToClass(
-              httpRes?.data,
-              shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException
-            );
+          res.apiException = utils.objectToClass(
+            httpRes?.data,
+            shared.ApiException
+          );
         }
         break;
     }
@@ -346,11 +341,10 @@ export class Moments {
     switch (true) {
       case httpRes?.status == 200:
         if (utils.matchContentType(contentType, `application/json`)) {
-          res.eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiStatusResponse =
-            utils.objectToClass(
-              httpRes?.data,
-              shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiStatusResponse
-            );
+          res.apiStatusResponse = utils.objectToClass(
+            httpRes?.data,
+            shared.ApiStatusResponse
+          );
         }
         if (utils.matchContentType(contentType, `application/xml`)) {
           const resBody: string = JSON.stringify(httpRes?.data, null, 0);
@@ -369,11 +363,10 @@ export class Moments {
           res.body = out;
         }
         if (utils.matchContentType(contentType, `application/json`)) {
-          res.eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException =
-            utils.objectToClass(
-              httpRes?.data,
-              shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException
-            );
+          res.apiException = utils.objectToClass(
+            httpRes?.data,
+            shared.ApiException
+          );
         }
         break;
     }
@@ -439,11 +432,10 @@ export class Moments {
         break;
       case [400, 404, 500].includes(httpRes?.status):
         if (utils.matchContentType(contentType, `application/json`)) {
-          res.nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse =
-            utils.objectToClass(
-              httpRes?.data,
-              shared.NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse
-            );
+          res.exceptionResponse = utils.objectToClass(
+            httpRes?.data,
+            shared.ExceptionResponse
+          );
         }
         break;
     }

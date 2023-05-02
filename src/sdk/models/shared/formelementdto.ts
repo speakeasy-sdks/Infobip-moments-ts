@@ -3,11 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementOptionDto } from "./eightytwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93formelementoptiondto";
-import { EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ValidationRules } from "./eightytwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93validationrules";
+import { FormElementOptionDto } from "./formelementoptiondto";
+import { ValidationRules } from "./validationrules";
 import { Expose, Type } from "class-transformer";
 
-export enum EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDtoComponentEnum {
+export enum FormElementDtoComponentEnum {
   Text = "TEXT",
   Textarea = "TEXTAREA",
   Number = "NUMBER",
@@ -29,7 +29,7 @@ export enum EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a
 /**
  * List of form fields
  */
-export class EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDto extends SpeakeasyBase {
+export class FormElementDto extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "additionalConfiguration" })
   additionalConfiguration?: Record<string, string>;
@@ -40,7 +40,7 @@ export class EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2
 
   @SpeakeasyMetadata()
   @Expose({ name: "component" })
-  component: EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDtoComponentEnum;
+  component: FormElementDtoComponentEnum;
 
   @SpeakeasyMetadata()
   @Expose({ name: "fieldId" })
@@ -58,16 +58,10 @@ export class EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2
   @Expose({ name: "label" })
   label?: string;
 
-  @SpeakeasyMetadata({
-    elemType:
-      EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementOptionDto,
-  })
+  @SpeakeasyMetadata({ elemType: FormElementOptionDto })
   @Expose({ name: "options" })
-  @Type(
-    () =>
-      EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementOptionDto
-  )
-  options?: EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementOptionDto[];
+  @Type(() => FormElementOptionDto)
+  options?: FormElementOptionDto[];
 
   @SpeakeasyMetadata()
   @Expose({ name: "personField" })
@@ -87,9 +81,6 @@ export class EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2
 
   @SpeakeasyMetadata()
   @Expose({ name: "validationRules" })
-  @Type(
-    () =>
-      EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ValidationRules
-  )
-  validationRules?: EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ValidationRules;
+  @Type(() => ValidationRules)
+  validationRules?: ValidationRules;
 }
