@@ -40,6 +40,95 @@ export class Moments {
   }
 
   /**
+   * Add Person to Flow
+   *
+   * @remarks
+   * Creates or updates a person and adds it to Flow
+   */
+  async addPeopleToFlow(
+    req: operations.AddPeopleToFlowRequest,
+    security: operations.AddPeopleToFlowSecurity,
+    config?: AxiosRequestConfig
+  ): Promise<operations.AddPeopleToFlowResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.AddPeopleToFlowRequest(req);
+    }
+
+    const baseURL: string = this._serverURL;
+    const url: string = utils.generateURL(
+      baseURL,
+      "/communication/1/flows/{campaignId}/participants",
+      req
+    );
+
+    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
+
+    try {
+      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+        req,
+        "nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0FlowPersonRequest",
+        "json"
+      );
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        throw new Error(`Error serializing request body, cause: ${e.message}`);
+      }
+    }
+
+    if (!(security instanceof utils.SpeakeasyBase)) {
+      security = new operations.AddPeopleToFlowSecurity(security);
+    }
+    const client: AxiosInstance = utils.createSecurityClient(
+      this._defaultClient,
+      security
+    );
+
+    const headers = {
+      ...utils.getHeadersFromRequest(req),
+      ...reqBodyHeaders,
+      ...config?.headers,
+    };
+    const queryParams: string = utils.serializeQueryParams(req);
+
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
+      url: url + queryParams,
+      method: "post",
+      headers: headers,
+      data: reqBody,
+      ...config,
+    });
+
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
+
+    const res: operations.AddPeopleToFlowResponse =
+      new operations.AddPeopleToFlowResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        break;
+      case [400, 404, 500].includes(httpRes?.status):
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse =
+            utils.objectToClass(
+              httpRes?.data,
+              shared.NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse
+            );
+        }
+        break;
+    }
+
+    return res;
+  }
+
+  /**
    * Get form
    *
    * @remarks
@@ -284,6 +373,76 @@ export class Moments {
             utils.objectToClass(
               httpRes?.data,
               shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException
+            );
+        }
+        break;
+    }
+
+    return res;
+  }
+
+  /**
+   * Remove Person from Flow
+   *
+   * @remarks
+   * Removes a person with given identifier from the Flow
+   */
+  async removePeopleFromFlow(
+    req: operations.RemovePeopleFromFlowRequest,
+    security: operations.RemovePeopleFromFlowSecurity,
+    config?: AxiosRequestConfig
+  ): Promise<operations.RemovePeopleFromFlowResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.RemovePeopleFromFlowRequest(req);
+    }
+
+    const baseURL: string = this._serverURL;
+    const url: string = utils.generateURL(
+      baseURL,
+      "/communication/1/flows/{campaignId}/participants",
+      req
+    );
+
+    if (!(security instanceof utils.SpeakeasyBase)) {
+      security = new operations.RemovePeopleFromFlowSecurity(security);
+    }
+    const client: AxiosInstance = utils.createSecurityClient(
+      this._defaultClient,
+      security
+    );
+
+    const headers = { ...utils.getHeadersFromRequest(req), ...config?.headers };
+    const queryParams: string = utils.serializeQueryParams(req);
+
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
+      url: url + queryParams,
+      method: "delete",
+      headers: headers,
+      ...config,
+    });
+
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
+
+    const res: operations.RemovePeopleFromFlowResponse =
+      new operations.RemovePeopleFromFlowResponse({
+        statusCode: httpRes.status,
+        contentType: contentType,
+        rawResponse: httpRes,
+      });
+    switch (true) {
+      case httpRes?.status == 200:
+        break;
+      case [400, 404, 500].includes(httpRes?.status):
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse =
+            utils.objectToClass(
+              httpRes?.data,
+              shared.NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse
             );
         }
         break;
