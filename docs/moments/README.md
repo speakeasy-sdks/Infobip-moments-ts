@@ -10,6 +10,7 @@ When you need to collect customer data that`s necessary to generate new leads an
 ### Available Operations
 
 * [getForm](#getform) - Get form
+* [getForms](#getforms) - Get forms
 * [incrementViewCount](#incrementviewcount) - Increment form view count
 
 ## getForm
@@ -19,20 +20,48 @@ Use this method to get an active form by its ID.
 ### Example Usage
 
 ```typescript
-import { SDK } from "infobip-moments";
+import { Infobip } from "infobip-moments";
 import { GetFormResponse } from "infobip-moments/dist/sdk/models/operations";
 import {
   EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ActionAfterSubmissionTypeEnum,
   EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDtoComponentEnum,
 } from "infobip-moments/dist/sdk/models/shared";
 
-const sdk = new SDK();
+const sdk = new Infobip();
 
 sdk.moments.getForm({
-  id: "251904e5-23c7-4e0b-8717-8e4796f2a70c",
+  id: "1904e523-c7e0-4bc7-978e-4796f2a70c68",
 }, {
   apiKeyHeader: "YOUR_API_KEY_HERE",
 }).then((res: GetFormResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+```
+
+## getForms
+
+Use this method to get a list of active forms.
+
+### Example Usage
+
+```typescript
+import { Infobip } from "infobip-moments";
+import { GetFormsResponse } from "infobip-moments/dist/sdk/models/operations";
+import {
+  EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ActionAfterSubmissionTypeEnum,
+  EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDtoComponentEnum,
+} from "infobip-moments/dist/sdk/models/shared";
+
+const sdk = new Infobip();
+
+sdk.moments.getForms({
+  limit: 510017,
+  offset: 159867,
+}, {
+  ibssoTokenHeader: "YOUR_API_KEY_HERE",
+}).then((res: GetFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -46,13 +75,13 @@ Use this method to increase the view counter of a specific form. It's used for p
 ### Example Usage
 
 ```typescript
-import { SDK } from "infobip-moments";
+import { Infobip } from "infobip-moments";
 import { IncrementViewCountResponse } from "infobip-moments/dist/sdk/models/operations";
 
-const sdk = new SDK();
+const sdk = new Infobip();
 
 sdk.moments.incrementViewCount({
-  id: "688282aa-4825-462f-a22e-9817ee17cbe6",
+  id: "82aa4825-62f2-422e-9817-ee17cbe61e6b",
 }, {
   apiKeyHeader: "YOUR_API_KEY_HERE",
 }).then((res: IncrementViewCountResponse) => {

@@ -1,4 +1,4 @@
-# SDK
+# Infobip SDK
 
 ## Overview
 

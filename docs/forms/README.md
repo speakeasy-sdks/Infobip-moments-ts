@@ -1,4 +1,4 @@
-# customerEngagement
+# forms
 
 ### Available Operations
 
@@ -20,9 +20,9 @@ import {
 
 const sdk = new Infobip();
 
-sdk.customerEngagement.getForms({
-  limit: 715190,
-  offset: 844266,
+sdk.forms.getForms({
+  limit: 178367,
+  offset: 373813,
 }, {
   ibssoTokenHeader: "YOUR_API_KEY_HERE",
 }).then((res: GetFormsResponse) => {
