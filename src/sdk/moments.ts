@@ -122,6 +122,90 @@ export class Moments {
   }
 
   /**
+   * Get forms
+   *
+   * @remarks
+   * Use this method to get a list of active forms.
+   */
+  async getForms(
+    req: operations.GetFormsRequest,
+    security: operations.GetFormsSecurity,
+    config?: AxiosRequestConfig
+  ): Promise<operations.GetFormsResponse> {
+    if (!(req instanceof utils.SpeakeasyBase)) {
+      req = new operations.GetFormsRequest(req);
+    }
+
+    const baseURL: string = this._serverURL;
+    const url: string = baseURL.replace(/\/$/, "") + "/forms/1/forms";
+
+    if (!(security instanceof utils.SpeakeasyBase)) {
+      security = new operations.GetFormsSecurity(security);
+    }
+    const client: AxiosInstance = utils.createSecurityClient(
+      this._defaultClient,
+      security
+    );
+
+    const queryParams: string = utils.serializeQueryParams(req);
+
+    const httpRes: AxiosResponse = await client.request({
+      validateStatus: () => true,
+      url: url + queryParams,
+      method: "get",
+      ...config,
+    });
+
+    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+    if (httpRes?.status == null) {
+      throw new Error(`status code not found in response: ${httpRes}`);
+    }
+
+    const res: operations.GetFormsResponse = new operations.GetFormsResponse({
+      statusCode: httpRes.status,
+      contentType: contentType,
+      rawResponse: httpRes,
+    });
+    switch (true) {
+      case httpRes?.status == 200:
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormListDto =
+            utils.objectToClass(
+              httpRes?.data,
+              shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormListDto
+            );
+        }
+        if (utils.matchContentType(contentType, `application/xml`)) {
+          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+          const out: Uint8Array = new Uint8Array(resBody.length);
+          for (let i = 0; i < resBody.length; i++)
+            out[i] = resBody.charCodeAt(i);
+          res.body = out;
+        }
+        break;
+      case [400, 401, 500].includes(httpRes?.status):
+        if (utils.matchContentType(contentType, `application/xml`)) {
+          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+          const out: Uint8Array = new Uint8Array(resBody.length);
+          for (let i = 0; i < resBody.length; i++)
+            out[i] = resBody.charCodeAt(i);
+          res.body = out;
+        }
+        if (utils.matchContentType(contentType, `application/json`)) {
+          res.eightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException =
+            utils.objectToClass(
+              httpRes?.data,
+              shared.EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiException
+            );
+        }
+        break;
+    }
+
+    return res;
+  }
+
+  /**
    * Increment form view count
    *
    * @remarks

@@ -12,7 +12,7 @@ Creates or updates a person and adds it to Flow
 ### Example Usage
 
 ```typescript
-import { SDK } from "infobip-moments";
+import { Infobip } from "infobip-moments";
 import { AddPeopleToFlowResponse } from "infobip-moments/dist/sdk/models/operations";
 import {
   NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2GenderEnum,
@@ -21,7 +21,7 @@ import {
   NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2TypeEnum,
 } from "infobip-moments/dist/sdk/models/shared";
 
-const sdk = new SDK();
+const sdk = new Infobip();
 
 sdk.flow.addPeopleToFlow({
   nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0FlowPersonRequest: {
@@ -571,10 +571,10 @@ Removes a person with given identifier from the Flow
 ### Example Usage
 
 ```typescript
-import { SDK } from "infobip-moments";
+import { Infobip } from "infobip-moments";
 import { RemovePeopleFromFlowResponse } from "infobip-moments/dist/sdk/models/operations";
 
-const sdk = new SDK();
+const sdk = new Infobip();
 
 sdk.flow.removePeopleFromFlow({
   campaignId: 442015,

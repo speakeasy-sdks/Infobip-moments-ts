@@ -19,14 +19,14 @@ yarn add https://github.com/speakeasy-sdks/Infobip-moments-ts
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```typescript
-import { SDK } from "infobip-moments";
+import { Infobip } from "infobip-moments";
 import { GetFormsResponse } from "infobip-moments/dist/sdk/models/operations";
 import {
   EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ActionAfterSubmissionTypeEnum,
   EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93FormElementDtoComponentEnum,
 } from "infobip-moments/dist/sdk/models/shared";
 
-const sdk = new SDK();
+const sdk = new Infobip();
 
 sdk.customerEngagement.getForms({
   limit: 548814,
@@ -54,9 +54,14 @@ sdk.customerEngagement.getForms({
 * [addPeopleToFlow](docs/flow/README.md#addpeopletoflow) - Add Person to Flow
 * [removePeopleFromFlow](docs/flow/README.md#removepeoplefromflow) - Remove Person from Flow
 
+### [forms](docs/forms/README.md)
+
+* [getForms](docs/forms/README.md#getforms) - Get forms
+
 ### [moments](docs/moments/README.md)
 
 * [getForm](docs/moments/README.md#getform) - Get form
+* [getForms](docs/moments/README.md#getforms) - Get forms
 * [incrementViewCount](docs/moments/README.md#incrementviewcount) - Increment form view count
 <!-- End SDK Available Operations -->
 
