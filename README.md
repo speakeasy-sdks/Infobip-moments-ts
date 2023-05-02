@@ -54,14 +54,9 @@ sdk.customerEngagement.getForms({
 * [addPeopleToFlow](docs/flow/README.md#addpeopletoflow) - Add Person to Flow
 * [removePeopleFromFlow](docs/flow/README.md#removepeoplefromflow) - Remove Person from Flow
 
-### [forms](docs/forms/README.md)
-
-* [getForms](docs/forms/README.md#getforms) - Get forms
-
 ### [moments](docs/moments/README.md)
 
 * [getForm](docs/moments/README.md#getform) - Get form
-* [getForms](docs/moments/README.md#getforms) - Get forms
 * [incrementViewCount](docs/moments/README.md#incrementviewcount) - Increment form view count
 <!-- End SDK Available Operations -->
 

@@ -1,6 +1,5 @@
 src/sdk/customerengagement.ts
 src/sdk/flow.ts
-src/sdk/forms.ts
 src/sdk/moments.ts
 src/sdk/sdk.ts
 .eslintrc.yml
@@ -58,6 +57,5 @@ src/sdk/models/shared/index.ts
 docs/sdk/README.md
 docs/customerengagement/README.md
 docs/flow/README.md
-docs/forms/README.md
 docs/moments/README.md
 USAGE.md
