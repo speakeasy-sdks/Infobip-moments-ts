@@ -4,7 +4,6 @@
 
 import { CustomerEngagement } from "./customerengagement";
 import { Flow } from "./flow";
-import { Forms } from "./forms";
 import { Moments } from "./moments";
 import axios from "axios";
 import { AxiosInstance } from "axios";
@@ -39,7 +38,6 @@ export type SDKProps = {
 export class SDK {
   public customerEngagement: CustomerEngagement;
   public flow: Flow;
-  public forms: Forms;
   /**
    * Create exciting customer journeys and engage people in a dialogue through [Flow](https://www.infobip.com/docs/moments/manage-flow), our visual communication builder that helps automatize business processes and reach relevant audiences at just the right moment. People can be added or removed from the communication programmatically via Flow API.
    *
@@ -54,7 +52,7 @@ export class SDK {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "1.0.0";
+  private _sdkVersion = "1.0.1";
   private _genVersion = "2.24.0";
   private _globals: any;
 
@@ -75,15 +73,6 @@ export class SDK {
     );
 
     this.flow = new Flow(
-      this._defaultClient,
-      this._securityClient,
-      this._serverURL,
-      this._language,
-      this._sdkVersion,
-      this._genVersion
-    );
-
-    this.forms = new Forms(
       this._defaultClient,
       this._securityClient,
       this._serverURL,
