@@ -6,8 +6,8 @@ management:
   generationVersion: 2.24.0
 generation:
   telemetryEnabled: false
-  sdkClassName: SDK
-  singleTagPerOp: true
+  sdkClassName: moments
+  singleTagPerOp: false
 typescript:
   version: 1.0.1
   author: Infobip
