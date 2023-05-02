@@ -3,26 +3,20 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormDto } from "./eightytwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93apiformdto";
+import { ApiFormDto } from "./apiformdto";
 import { Expose, Type } from "class-transformer";
 
 /**
  * Successful Response
  */
-export class EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormListDto extends SpeakeasyBase {
+export class ApiFormListDto extends SpeakeasyBase {
   /**
    * Forms list
    */
-  @SpeakeasyMetadata({
-    elemType:
-      EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormDto,
-  })
+  @SpeakeasyMetadata({ elemType: ApiFormDto })
   @Expose({ name: "forms" })
-  @Type(
-    () =>
-      EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormDto
-  )
-  forms: EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiFormDto[];
+  @Type(() => ApiFormDto)
+  forms: ApiFormDto[];
 
   /**
    * Number of returned forms

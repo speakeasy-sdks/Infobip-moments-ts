@@ -28,7 +28,7 @@ export class AddPeopleToFlowSecurity extends SpeakeasyBase {
 
 export class AddPeopleToFlowRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0FlowPersonRequest?: shared.NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0FlowPersonRequest;
+  flowPersonRequest?: shared.FlowPersonRequest;
 
   /**
    * Unique identifier of the flow that person will be added to
@@ -73,14 +73,14 @@ export class AddPeopleToFlowRequest extends SpeakeasyBase {
 }
 
 export class AddPeopleToFlowResponse extends SpeakeasyBase {
+  @SpeakeasyMetadata()
+  contentType: string;
+
   /**
    * Bad Request
    */
   @SpeakeasyMetadata()
-  nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse?: shared.NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse;
-
-  @SpeakeasyMetadata()
-  contentType: string;
+  exceptionResponse?: shared.ExceptionResponse;
 
   @SpeakeasyMetadata()
   statusCode: number;

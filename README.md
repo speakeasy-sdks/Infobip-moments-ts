@@ -22,16 +22,16 @@ yarn add https://github.com/speakeasy-sdks/Infobip-moments-ts
 import { Infobip } from "infobip-moments";
 import { AddPeopleToFlowResponse } from "infobip-moments/dist/sdk/models/operations";
 import {
-  NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2GenderEnum,
-  NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2ModifiedFromEnum,
-  NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2OriginEnum,
-  NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2TypeEnum,
+  IamPersonV2GenderEnum,
+  IamPersonV2ModifiedFromEnum,
+  IamPersonV2OriginEnum,
+  IamPersonV2TypeEnum,
 } from "infobip-moments/dist/sdk/models/shared";
 
 const sdk = new Infobip();
 
 sdk.moments.addPeopleToFlow({
-  nineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0FlowPersonRequest: {
+  flowPersonRequest: {
     flowVariables: {
       "provident": {
         "quibusdam": "unde",
@@ -533,7 +533,7 @@ sdk.moments.addPeopleToFlow({
       },
       externalId: "ex",
       firstName: "Sage",
-      gender: NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2GenderEnum.Female,
+      gender: IamPersonV2GenderEnum.Female,
       id: 972920,
       integrations: {
         salesforce: {
@@ -544,14 +544,14 @@ sdk.moments.addPeopleToFlow({
       lastName: "Schamberger",
       middleName: "saepe",
       modifiedAt: "ea",
-      modifiedFrom: NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2ModifiedFromEnum.Ams,
-      origin: NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2OriginEnum.Facebook,
+      modifiedFrom: IamPersonV2ModifiedFromEnum.Ams,
+      origin: IamPersonV2OriginEnum.Facebook,
       profilePicture: "veniam",
       tags: [
         "inventore",
         "magnam",
       ],
-      type: NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamPersonV2TypeEnum.Lead,
+      type: IamPersonV2TypeEnum.Lead,
     },
   },
   campaignId: 775220,

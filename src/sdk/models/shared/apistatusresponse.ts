@@ -8,7 +8,7 @@ import { Expose } from "class-transformer";
 /**
  * Successful Response
  */
-export class EightyTwoacced121042a63992bde26d4dd141353f7b2633c33f797139d71d4bef2a93ApiStatusResponse extends SpeakeasyBase {
+export class ApiStatusResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "status" })
   status: string;

@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-export class NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0IamEmailContact extends SpeakeasyBase {
+export class IamEmailContact extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "address" })
   address?: string;

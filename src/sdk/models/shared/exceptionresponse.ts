@@ -24,7 +24,7 @@ import { Expose } from "class-transformer";
  * <tr><td>Internal server error</td><td>50001</td><td>500</td></tr>
  * </table>
  */
-export class NineHundredTrillionSixHundredAndThirtyFourBillionThreeHundredAndThirtyNineMillionFiveHundredAndTwelveThousandAndFortyOnedd9c6cd5c4ad62d6cf43ea57e0548f5deeceb9f79d92b92f0ExceptionResponse extends SpeakeasyBase {
+export class ExceptionResponse extends SpeakeasyBase {
   @SpeakeasyMetadata()
   @Expose({ name: "errorCode" })
   errorCode?: number;
