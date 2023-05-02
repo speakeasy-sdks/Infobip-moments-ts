@@ -7,8 +7,9 @@ management:
 generation:
   telemetryEnabled: false
   sdkClassName: Infobip
+  sdkFlattening: true
   singleTagPerOp: false
 typescript:
-  version: 1.0.2
+  version: ""
   author: Infobip
   packageName: infobip-moments
