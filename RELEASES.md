@@ -43,3 +43,9 @@ Based on:
 - Speakeasy CLI 1.27.0 (2.24.0) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [NPM v0.0.2] https://www.npmjs.com/package/infobip-moments/v/0.0.2 - .
+
+## 2023-05-03 13:10:34
+### Changes
+Based on:
+- OpenAPI Doc 2.0.81 
+- Speakeasy CLI 1.27.0 (2.24.0) https://github.com/speakeasy-api/speakeasy
