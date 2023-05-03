@@ -6,13 +6,13 @@
 ### NPM
 
 ```bash
-npm add infobip-moments
+npm add https://github.com/speakeasy-sdks/Infobip-moments-ts
 ```
 
 ### Yarn
 
 ```bash
-yarn add infobip-moments
+yarn add https://github.com/speakeasy-sdks/Infobip-moments-ts
 ```
 <!-- End SDK Installation -->
 
