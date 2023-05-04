@@ -9,6 +9,7 @@ generation:
   sdkClassName: Infobip
   singleTagPerOp: false
 typescript:
+  maxMethodParams: 5
   version: 0.0.3
   author: Infobip
   packageName: infobip-moments
