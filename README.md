@@ -1,4 +1,13 @@
-# infobip-moments
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/6267663/236253267-fdcfa9b0-0cb4-43cf-91d6-c3f4020cf038.svg" width="350px">
+    <h1>Moments Typescript SDK</h1>
+   <p>The Global Communications Platform for Businesses</p>
+   <a href="https://www.infobip.com/docs/api/customer-engagement/moments"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=fc6424&style=for-the-badge" /></a>
+   <a href="https://github.com/speakeasy-sdks/Infobip-moments-ts/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/Infobip-moments-ts/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
+  <a href="https://github.com/speakeasy-sdks/Infobip-moments-ts/releases"><img src="https://img.shields.io/github/v/release/speakeasy-sdks/Infobip-moments-ts?sort=semver&style=for-the-badge" /></a>
+</div>
+
 
 <!-- Start SDK Installation -->
 ## SDK Installation
