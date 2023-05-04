@@ -134,14 +134,13 @@ export class Moments {
    * Use this method to get an active form by its ID.
    */
   async getForm(
-    req: operations.GetFormRequest,
     security: operations.GetFormSecurity,
+    id: string,
     config?: AxiosRequestConfig
   ): Promise<operations.GetFormResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetFormRequest(req);
-    }
-
+    const req = new operations.GetFormRequest({
+      id: id,
+    });
     const baseURL: string = this._serverURL;
     const url: string = utils.generateURL(baseURL, "/forms/1/forms/{id}", req);
 
@@ -214,14 +213,15 @@ export class Moments {
    * Use this method to get a list of active forms.
    */
   async getForms(
-    req: operations.GetFormsRequest,
     security: operations.GetFormsSecurity,
+    limit?: number,
+    offset?: number,
     config?: AxiosRequestConfig
   ): Promise<operations.GetFormsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetFormsRequest(req);
-    }
-
+    const req = new operations.GetFormsRequest({
+      limit: limit,
+      offset: offset,
+    });
     const baseURL: string = this._serverURL;
     const url: string = baseURL.replace(/\/$/, "") + "/forms/1/forms";
 
@@ -296,14 +296,13 @@ export class Moments {
    * Use this method to increase the view counter of a specific form. It's used for proper statistics calculation. Statistics are available on the form performance page on the Portal.
    */
   async incrementViewCount(
-    req: operations.IncrementViewCountRequest,
     security: operations.IncrementViewCountSecurity,
+    id: string,
     config?: AxiosRequestConfig
   ): Promise<operations.IncrementViewCountResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.IncrementViewCountRequest(req);
-    }
-
+    const req = new operations.IncrementViewCountRequest({
+      id: id,
+    });
     const baseURL: string = this._serverURL;
     const url: string = utils.generateURL(
       baseURL,
