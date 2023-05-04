@@ -585,10 +585,8 @@ import { ActionAfterSubmissionTypeEnum, FormElementDtoComponentEnum } from "info
 const sdk = new Infobip();
 
 sdk.moments.getForm({
-  id: "c8dd6b14-4290-4747-8778-a7bd466d28c1",
-}, {
   apiKeyHeader: "YOUR_API_KEY_HERE",
-}).then((res: GetFormResponse) => {
+}, "nobis").then((res: GetFormResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -609,11 +607,8 @@ import { ActionAfterSubmissionTypeEnum, FormElementDtoComponentEnum } from "info
 const sdk = new Infobip();
 
 sdk.moments.getForms({
-  limit: 56848,
-  offset: 660040,
-}, {
   ibssoTokenHeader: "YOUR_API_KEY_HERE",
-}).then((res: GetFormsResponse) => {
+}, 557369, 829603).then((res: GetFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -633,10 +628,8 @@ import { IncrementViewCountResponse } from "infobip-moments/dist/sdk/models/oper
 const sdk = new Infobip();
 
 sdk.moments.incrementViewCount({
-  id: "b3cdca42-5190-44e5-a3c7-e0bc7178e479",
-}, {
   apiKeyHeader: "YOUR_API_KEY_HERE",
-}).then((res: IncrementViewCountResponse) => {
+}, "nulla").then((res: IncrementViewCountResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -656,12 +649,12 @@ import { RemovePeopleFromFlowResponse } from "infobip-moments/dist/sdk/models/op
 const sdk = new Infobip();
 
 sdk.moments.removePeopleFromFlow({
-  campaignId: 414567,
-  email: "Chaim.Oberbrunner@hotmail.com",
-  externalId: "porro",
-  phone: "1-651-616-6251 x331",
-  pushRegistrationId: "sapiente",
-  xRequestStart: "consequuntur",
+  campaignId: 379034,
+  email: "Ava13@hotmail.com",
+  externalId: "provident",
+  phone: "534-444-5646",
+  pushRegistrationId: "fugiat",
+  xRequestStart: "ut",
 }, {
   apiKeyHeader: "YOUR_API_KEY_HERE",
 }).then((res: RemovePeopleFromFlowResponse) => {

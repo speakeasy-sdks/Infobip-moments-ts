@@ -2,14 +2,14 @@ configVersion: 1.0.0
 management:
   docChecksum: 9cb7e9b819d276e4b93aa21374a74dea
   docVersion: 2.0.81
-  speakeasyVersion: 1.27.0
-  generationVersion: 2.24.0
+  speakeasyVersion: 1.28.0
+  generationVersion: 2.25.0
 generation:
   telemetryEnabled: false
   sdkClassName: Infobip
   singleTagPerOp: false
 typescript:
-  maxMethodParams: 5
-  version: 0.0.3
+  version: 0.1.0
   author: Infobip
+  maxMethodParams: 5
   packageName: infobip-moments
