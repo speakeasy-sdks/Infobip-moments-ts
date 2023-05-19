@@ -24,12 +24,7 @@ Creates or updates a person and adds it to Flow
 ```typescript
 import { Infobip } from "infobip-moments";
 import { AddPeopleToFlowResponse } from "infobip-moments/dist/sdk/models/operations";
-import {
-  IamPersonV2GenderEnum,
-  IamPersonV2ModifiedFromEnum,
-  IamPersonV2OriginEnum,
-  IamPersonV2TypeEnum,
-} from "infobip-moments/dist/sdk/models/shared";
+import { IamPersonV2Gender, IamPersonV2ModifiedFrom, IamPersonV2Origin, IamPersonV2Type } from "infobip-moments/dist/sdk/models/shared";
 
 const sdk = new Infobip();
 
@@ -535,7 +530,7 @@ sdk.moments.addPeopleToFlow({
       },
       externalId: "ex",
       firstName: "Sage",
-      gender: IamPersonV2GenderEnum.Female,
+      gender: IamPersonV2Gender.Female,
       id: 972920,
       integrations: {
         salesforce: {
@@ -546,14 +541,14 @@ sdk.moments.addPeopleToFlow({
       lastName: "Schamberger",
       middleName: "saepe",
       modifiedAt: "ea",
-      modifiedFrom: IamPersonV2ModifiedFromEnum.Ams,
-      origin: IamPersonV2OriginEnum.Facebook,
+      modifiedFrom: IamPersonV2ModifiedFrom.Ams,
+      origin: IamPersonV2Origin.Facebook,
       profilePicture: "veniam",
       tags: [
         "inventore",
         "magnam",
       ],
-      type: IamPersonV2TypeEnum.Lead,
+      type: IamPersonV2Type.Lead,
     },
   },
   campaignId: 775220,
@@ -580,7 +575,7 @@ Use this method to get an active form by its ID.
 ```typescript
 import { Infobip } from "infobip-moments";
 import { GetFormResponse } from "infobip-moments/dist/sdk/models/operations";
-import { ActionAfterSubmissionTypeEnum, FormElementDtoComponentEnum } from "infobip-moments/dist/sdk/models/shared";
+import { ActionAfterSubmissionType, FormElementDtoComponent } from "infobip-moments/dist/sdk/models/shared";
 
 const sdk = new Infobip();
 
@@ -602,7 +597,7 @@ Use this method to get a list of active forms.
 ```typescript
 import { Infobip } from "infobip-moments";
 import { GetFormsResponse } from "infobip-moments/dist/sdk/models/operations";
-import { ActionAfterSubmissionTypeEnum, FormElementDtoComponentEnum } from "infobip-moments/dist/sdk/models/shared";
+import { ActionAfterSubmissionType, FormElementDtoComponent } from "infobip-moments/dist/sdk/models/shared";
 
 const sdk = new Infobip();
 

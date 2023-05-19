@@ -7,12 +7,12 @@ import { IamContactV2 } from "./iamcontactv2";
 import { IamIntegrationsV2 } from "./iamintegrationsv2";
 import { Expose, Type } from "class-transformer";
 
-export enum IamPersonV2GenderEnum {
+export enum IamPersonV2Gender {
   Male = "MALE",
   Female = "FEMALE",
 }
 
-export enum IamPersonV2ModifiedFromEnum {
+export enum IamPersonV2ModifiedFrom {
   Api = "API",
   Portal = "PORTAL",
   WebSDK = "WEB_SDK",
@@ -31,7 +31,7 @@ export enum IamPersonV2ModifiedFromEnum {
   Conversations = "CONVERSATIONS",
 }
 
-export enum IamPersonV2OriginEnum {
+export enum IamPersonV2Origin {
   Api = "API",
   Portal = "PORTAL",
   WebSDK = "WEB_SDK",
@@ -50,7 +50,7 @@ export enum IamPersonV2OriginEnum {
   Conversations = "CONVERSATIONS",
 }
 
-export enum IamPersonV2TypeEnum {
+export enum IamPersonV2Type {
   Customer = "CUSTOMER",
   Lead = "LEAD",
   Agent = "AGENT",
@@ -104,7 +104,7 @@ export class IamPersonV2 extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "gender" })
-  gender?: IamPersonV2GenderEnum;
+  gender?: IamPersonV2Gender;
 
   @SpeakeasyMetadata()
   @Expose({ name: "id" })
@@ -129,11 +129,11 @@ export class IamPersonV2 extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "modifiedFrom" })
-  modifiedFrom?: IamPersonV2ModifiedFromEnum;
+  modifiedFrom?: IamPersonV2ModifiedFrom;
 
   @SpeakeasyMetadata()
   @Expose({ name: "origin" })
-  origin?: IamPersonV2OriginEnum;
+  origin?: IamPersonV2Origin;
 
   @SpeakeasyMetadata()
   @Expose({ name: "profilePicture" })
@@ -145,5 +145,5 @@ export class IamPersonV2 extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "type" })
-  type?: IamPersonV2TypeEnum;
+  type?: IamPersonV2Type;
 }

@@ -7,7 +7,7 @@ import { FormElementOptionDto } from "./formelementoptiondto";
 import { ValidationRules } from "./validationrules";
 import { Expose, Type } from "class-transformer";
 
-export enum FormElementDtoComponentEnum {
+export enum FormElementDtoComponent {
   Text = "TEXT",
   Textarea = "TEXTAREA",
   Number = "NUMBER",
@@ -40,7 +40,7 @@ export class FormElementDto extends SpeakeasyBase {
 
   @SpeakeasyMetadata()
   @Expose({ name: "component" })
-  component: FormElementDtoComponentEnum;
+  component: FormElementDtoComponent;
 
   @SpeakeasyMetadata()
   @Expose({ name: "fieldId" })

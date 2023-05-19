@@ -30,7 +30,7 @@ yarn add https://github.com/speakeasy-sdks/Infobip-moments-ts
 ```typescript
 import { Infobip } from "infobip-moments";
 import { GetFormsResponse } from "infobip-moments/dist/sdk/models/operations";
-import { ActionAfterSubmissionTypeEnum, FormElementDtoComponentEnum } from "infobip-moments/dist/sdk/models/shared";
+import { ActionAfterSubmissionType, FormElementDtoComponent } from "infobip-moments/dist/sdk/models/shared";
 
 const sdk = new Infobip();
 
