@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class IamEmailContact extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "address" })
-  address?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "address" })
+    address?: string;
 }

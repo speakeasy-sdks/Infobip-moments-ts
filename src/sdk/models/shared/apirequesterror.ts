@@ -7,8 +7,8 @@ import { ApiRequestErrorDetails } from "./apirequesterrordetails";
 import { Expose, Type } from "class-transformer";
 
 export class ApiRequestError extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "serviceException" })
-  @Type(() => ApiRequestErrorDetails)
-  serviceException?: ApiRequestErrorDetails;
+    @SpeakeasyMetadata()
+    @Expose({ name: "serviceException" })
+    @Type(() => ApiRequestErrorDetails)
+    serviceException?: ApiRequestErrorDetails;
 }

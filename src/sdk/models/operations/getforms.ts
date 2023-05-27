@@ -7,50 +7,48 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetFormsSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=apiKey;subtype=header;name=Authorization",
-  })
-  ibssoTokenHeader: string;
+    @SpeakeasyMetadata({
+        data: "security, scheme=true;type=apiKey;subtype=header;name=Authorization",
+    })
+    ibssoTokenHeader: string;
 }
 
 export class GetFormsRequest extends SpeakeasyBase {
-  /**
-   * The maximum number of returned forms. Maximum value is `100`.
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
-  limit?: number;
+    /**
+     * The maximum number of returned forms. Maximum value is `100`.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
+    limit?: number;
 
-  /**
-   * Skip first {offset} forms of the list.
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=offset",
-  })
-  offset?: number;
+    /**
+     * Skip first {offset} forms of the list.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
+    offset?: number;
 }
 
 export class GetFormsResponse extends SpeakeasyBase {
-  /**
-   * Bad Request
-   */
-  @SpeakeasyMetadata()
-  apiException?: shared.ApiException;
+    /**
+     * Bad Request
+     */
+    @SpeakeasyMetadata()
+    apiException?: shared.ApiException;
 
-  /**
-   * Successful Response
-   */
-  @SpeakeasyMetadata()
-  apiFormListDto?: shared.ApiFormListDto;
+    /**
+     * Successful Response
+     */
+    @SpeakeasyMetadata()
+    apiFormListDto?: shared.ApiFormListDto;
 
-  @SpeakeasyMetadata()
-  body?: Uint8Array;
+    @SpeakeasyMetadata()
+    body?: Uint8Array;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

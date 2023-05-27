@@ -16,460 +16,419 @@ import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
  *
  */
 export class Moments {
-  _defaultClient: AxiosInstance;
-  _securityClient: AxiosInstance;
-  _serverURL: string;
-  _language: string;
-  _sdkVersion: string;
-  _genVersion: string;
+    _defaultClient: AxiosInstance;
+    _securityClient: AxiosInstance;
+    _serverURL: string;
+    _language: string;
+    _sdkVersion: string;
+    _genVersion: string;
 
-  constructor(
-    defaultClient: AxiosInstance,
-    securityClient: AxiosInstance,
-    serverURL: string,
-    language: string,
-    sdkVersion: string,
-    genVersion: string
-  ) {
-    this._defaultClient = defaultClient;
-    this._securityClient = securityClient;
-    this._serverURL = serverURL;
-    this._language = language;
-    this._sdkVersion = sdkVersion;
-    this._genVersion = genVersion;
-  }
-
-  /**
-   * Add Person to Flow
-   *
-   * @remarks
-   * Creates or updates a person and adds it to Flow
-   */
-  async addPeopleToFlow(
-    req: operations.AddPeopleToFlowRequest,
-    security: operations.AddPeopleToFlowSecurity,
-    config?: AxiosRequestConfig
-  ): Promise<operations.AddPeopleToFlowResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.AddPeopleToFlowRequest(req);
+    constructor(
+        defaultClient: AxiosInstance,
+        securityClient: AxiosInstance,
+        serverURL: string,
+        language: string,
+        sdkVersion: string,
+        genVersion: string
+    ) {
+        this._defaultClient = defaultClient;
+        this._securityClient = securityClient;
+        this._serverURL = serverURL;
+        this._language = language;
+        this._sdkVersion = sdkVersion;
+        this._genVersion = genVersion;
     }
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/communication/1/flows/{campaignId}/participants",
-      req
-    );
-
-    let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
-
-    try {
-      [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-        req,
-        "flowPersonRequest",
-        "json"
-      );
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        throw new Error(`Error serializing request body, cause: ${e.message}`);
-      }
-    }
-
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.AddPeopleToFlowSecurity(security);
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
-
-    const headers = {
-      ...utils.getHeadersFromRequest(req),
-      ...reqBodyHeaders,
-      ...config?.headers,
-    };
-    const queryParams: string = utils.serializeQueryParams(req);
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "post",
-      headers: headers,
-      data: reqBody,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.AddPeopleToFlowResponse =
-      new operations.AddPeopleToFlowResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        break;
-      case [400, 404, 500].includes(httpRes?.status):
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.exceptionResponse = utils.objectToClass(
-            httpRes?.data,
-            shared.ExceptionResponse
-          );
+    /**
+     * Add Person to Flow
+     *
+     * @remarks
+     * Creates or updates a person and adds it to Flow
+     */
+    async addPeopleToFlow(
+        req: operations.AddPeopleToFlowRequest,
+        security: operations.AddPeopleToFlowSecurity,
+        config?: AxiosRequestConfig
+    ): Promise<operations.AddPeopleToFlowResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.AddPeopleToFlowRequest(req);
         }
-        break;
-    }
 
-    return res;
-  }
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/communication/1/flows/{campaignId}/participants",
+            req
+        );
 
-  /**
-   * Get form
-   *
-   * @remarks
-   * Use this method to get an active form by its ID.
-   */
-  async getForm(
-    security: operations.GetFormSecurity,
-    id: string,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetFormResponse> {
-    const req = new operations.GetFormRequest({
-      id: id,
-    });
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(baseURL, "/forms/1/forms/{id}", req);
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, {}];
 
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.GetFormSecurity(security);
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
-
-    const headers = { ...config?.headers };
-    headers["Accept"] =
-      "application/json;q=1, application/json;q=0.8, application/xml;q=0.5, application/xml;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetFormResponse = new operations.GetFormResponse({
-      statusCode: httpRes.status,
-      contentType: contentType,
-      rawResponse: httpRes,
-    });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.apiFormDto = utils.objectToClass(
-            httpRes?.data,
-            shared.ApiFormDto
-          );
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+                req,
+                "flowPersonRequest",
+                "json"
+            );
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
         }
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.AddPeopleToFlowSecurity(security);
         }
-        break;
-      case [401, 404, 500].includes(httpRes?.status):
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+        const client: AxiosInstance = utils.createSecurityClient(this._defaultClient, security);
+
+        const headers = {
+            ...utils.getHeadersFromRequest(req),
+            ...reqBodyHeaders,
+            ...config?.headers,
+        };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "post",
+            headers: headers,
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.apiException = utils.objectToClass(
-            httpRes?.data,
-            shared.ApiException
-          );
+
+        const res: operations.AddPeopleToFlowResponse = new operations.AddPeopleToFlowResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        switch (true) {
+            case httpRes?.status == 200:
+                break;
+            case [400, 404, 500].includes(httpRes?.status):
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.exceptionResponse = utils.objectToClass(
+                        httpRes?.data,
+                        shared.ExceptionResponse
+                    );
+                }
+                break;
         }
-        break;
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Get form
+     *
+     * @remarks
+     * Use this method to get an active form by its ID.
+     */
+    async getForm(
+        security: operations.GetFormSecurity,
+        id: string,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetFormResponse> {
+        const req = new operations.GetFormRequest({
+            id: id,
+        });
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/forms/1/forms/{id}", req);
 
-  /**
-   * Get forms
-   *
-   * @remarks
-   * Use this method to get a list of active forms.
-   */
-  async getForms(
-    security: operations.GetFormsSecurity,
-    limit?: number,
-    offset?: number,
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetFormsResponse> {
-    const req = new operations.GetFormsRequest({
-      limit: limit,
-      offset: offset,
-    });
-    const baseURL: string = this._serverURL;
-    const url: string = baseURL.replace(/\/$/, "") + "/forms/1/forms";
-
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.GetFormsSecurity(security);
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
-
-    const headers = { ...config?.headers };
-    const queryParams: string = utils.serializeQueryParams(req);
-    headers["Accept"] =
-      "application/json;q=1, application/json;q=0.8, application/xml;q=0.5, application/xml;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "get",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.GetFormsResponse = new operations.GetFormsResponse({
-      statusCode: httpRes.status,
-      contentType: contentType,
-      rawResponse: httpRes,
-    });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.apiFormListDto = utils.objectToClass(
-            httpRes?.data,
-            shared.ApiFormListDto
-          );
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetFormSecurity(security);
         }
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+        const client: AxiosInstance = utils.createSecurityClient(this._defaultClient, security);
+
+        const headers = { ...config?.headers };
+        headers["Accept"] =
+            "application/json;q=1, application/json;q=0.8, application/xml;q=0.5, application/xml;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case [400, 401, 500].includes(httpRes?.status):
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+
+        const res: operations.GetFormResponse = new operations.GetFormResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.apiFormDto = utils.objectToClass(httpRes?.data, shared.ApiFormDto);
+                }
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                break;
+            case [401, 404, 500].includes(httpRes?.status):
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.apiException = utils.objectToClass(httpRes?.data, shared.ApiException);
+                }
+                break;
         }
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.apiException = utils.objectToClass(
-            httpRes?.data,
-            shared.ApiException
-          );
-        }
-        break;
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Get forms
+     *
+     * @remarks
+     * Use this method to get a list of active forms.
+     */
+    async getForms(
+        security: operations.GetFormsSecurity,
+        limit?: number,
+        offset?: number,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetFormsResponse> {
+        const req = new operations.GetFormsRequest({
+            limit: limit,
+            offset: offset,
+        });
+        const baseURL: string = this._serverURL;
+        const url: string = baseURL.replace(/\/$/, "") + "/forms/1/forms";
 
-  /**
-   * Increment form view count
-   *
-   * @remarks
-   * Use this method to increase the view counter of a specific form. It's used for proper statistics calculation. Statistics are available on the form performance page on the Portal.
-   */
-  async incrementViewCount(
-    security: operations.IncrementViewCountSecurity,
-    id: string,
-    config?: AxiosRequestConfig
-  ): Promise<operations.IncrementViewCountResponse> {
-    const req = new operations.IncrementViewCountRequest({
-      id: id,
-    });
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/forms/1/forms/{id}/views",
-      req
-    );
-
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.IncrementViewCountSecurity(security);
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
-
-    const headers = { ...config?.headers };
-    headers["Accept"] =
-      "application/json;q=1, application/json;q=0.8, application/xml;q=0.5, application/xml;q=0";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url,
-      method: "post",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.IncrementViewCountResponse =
-      new operations.IncrementViewCountResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.apiStatusResponse = utils.objectToClass(
-            httpRes?.data,
-            shared.ApiStatusResponse
-          );
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetFormsSecurity(security);
         }
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+        const client: AxiosInstance = utils.createSecurityClient(this._defaultClient, security);
+
+        const headers = { ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] =
+            "application/json;q=1, application/json;q=0.8, application/xml;q=0.5, application/xml;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
-      case [401, 404, 500].includes(httpRes?.status):
-        if (utils.matchContentType(contentType, `application/xml`)) {
-          const resBody: string = JSON.stringify(httpRes?.data, null, 0);
-          const out: Uint8Array = new Uint8Array(resBody.length);
-          for (let i = 0; i < resBody.length; i++)
-            out[i] = resBody.charCodeAt(i);
-          res.body = out;
+
+        const res: operations.GetFormsResponse = new operations.GetFormsResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.apiFormListDto = utils.objectToClass(httpRes?.data, shared.ApiFormListDto);
+                }
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                break;
+            case [400, 401, 500].includes(httpRes?.status):
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.apiException = utils.objectToClass(httpRes?.data, shared.ApiException);
+                }
+                break;
         }
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.apiException = utils.objectToClass(
-            httpRes?.data,
-            shared.ApiException
-          );
+
+        return res;
+    }
+
+    /**
+     * Increment form view count
+     *
+     * @remarks
+     * Use this method to increase the view counter of a specific form. It's used for proper statistics calculation. Statistics are available on the form performance page on the Portal.
+     */
+    async incrementViewCount(
+        security: operations.IncrementViewCountSecurity,
+        id: string,
+        config?: AxiosRequestConfig
+    ): Promise<operations.IncrementViewCountResponse> {
+        const req = new operations.IncrementViewCountRequest({
+            id: id,
+        });
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(baseURL, "/forms/1/forms/{id}/views", req);
+
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.IncrementViewCountSecurity(security);
         }
-        break;
-    }
+        const client: AxiosInstance = utils.createSecurityClient(this._defaultClient, security);
 
-    return res;
-  }
+        const headers = { ...config?.headers };
+        headers["Accept"] =
+            "application/json;q=1, application/json;q=0.8, application/xml;q=0.5, application/xml;q=0";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
 
-  /**
-   * Remove Person from Flow
-   *
-   * @remarks
-   * Removes a person with given identifier from the Flow
-   */
-  async removePeopleFromFlow(
-    req: operations.RemovePeopleFromFlowRequest,
-    security: operations.RemovePeopleFromFlowSecurity,
-    config?: AxiosRequestConfig
-  ): Promise<operations.RemovePeopleFromFlowResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.RemovePeopleFromFlowRequest(req);
-    }
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            ...config,
+        });
 
-    const baseURL: string = this._serverURL;
-    const url: string = utils.generateURL(
-      baseURL,
-      "/communication/1/flows/{campaignId}/participants",
-      req
-    );
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
 
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.RemovePeopleFromFlowSecurity(security);
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
-
-    const headers = { ...utils.getHeadersFromRequest(req), ...config?.headers };
-    const queryParams: string = utils.serializeQueryParams(req);
-    headers["Accept"] = "application/json";
-    headers[
-      "user-agent"
-    ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
-
-    const httpRes: AxiosResponse = await client.request({
-      validateStatus: () => true,
-      url: url + queryParams,
-      method: "delete",
-      headers: headers,
-      ...config,
-    });
-
-    const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-    if (httpRes?.status == null) {
-      throw new Error(`status code not found in response: ${httpRes}`);
-    }
-
-    const res: operations.RemovePeopleFromFlowResponse =
-      new operations.RemovePeopleFromFlowResponse({
-        statusCode: httpRes.status,
-        contentType: contentType,
-        rawResponse: httpRes,
-      });
-    switch (true) {
-      case httpRes?.status == 200:
-        break;
-      case [400, 404, 500].includes(httpRes?.status):
-        if (utils.matchContentType(contentType, `application/json`)) {
-          res.exceptionResponse = utils.objectToClass(
-            httpRes?.data,
-            shared.ExceptionResponse
-          );
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
         }
-        break;
+
+        const res: operations.IncrementViewCountResponse =
+            new operations.IncrementViewCountResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.apiStatusResponse = utils.objectToClass(
+                        httpRes?.data,
+                        shared.ApiStatusResponse
+                    );
+                }
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                break;
+            case [401, 404, 500].includes(httpRes?.status):
+                if (utils.matchContentType(contentType, `application/xml`)) {
+                    const resBody: string = JSON.stringify(httpRes?.data, null, 0);
+                    const out: Uint8Array = new Uint8Array(resBody.length);
+                    for (let i = 0; i < resBody.length; i++) out[i] = resBody.charCodeAt(i);
+                    res.body = out;
+                }
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.apiException = utils.objectToClass(httpRes?.data, shared.ApiException);
+                }
+                break;
+        }
+
+        return res;
     }
 
-    return res;
-  }
+    /**
+     * Remove Person from Flow
+     *
+     * @remarks
+     * Removes a person with given identifier from the Flow
+     */
+    async removePeopleFromFlow(
+        req: operations.RemovePeopleFromFlowRequest,
+        security: operations.RemovePeopleFromFlowSecurity,
+        config?: AxiosRequestConfig
+    ): Promise<operations.RemovePeopleFromFlowResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.RemovePeopleFromFlowRequest(req);
+        }
+
+        const baseURL: string = this._serverURL;
+        const url: string = utils.generateURL(
+            baseURL,
+            "/communication/1/flows/{campaignId}/participants",
+            req
+        );
+
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.RemovePeopleFromFlowSecurity(security);
+        }
+        const client: AxiosInstance = utils.createSecurityClient(this._defaultClient, security);
+
+        const headers = { ...utils.getHeadersFromRequest(req), ...config?.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+        headers[
+            "user-agent"
+        ] = `speakeasy-sdk/${this._language} ${this._sdkVersion} ${this._genVersion}`;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "delete",
+            headers: headers,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.RemovePeopleFromFlowResponse =
+            new operations.RemovePeopleFromFlowResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        switch (true) {
+            case httpRes?.status == 200:
+                break;
+            case [400, 404, 500].includes(httpRes?.status):
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.exceptionResponse = utils.objectToClass(
+                        httpRes?.data,
+                        shared.ExceptionResponse
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
 }

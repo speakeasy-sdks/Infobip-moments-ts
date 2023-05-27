@@ -7,42 +7,42 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class IncrementViewCountSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=apiKey;subtype=header;name=Authorization",
-  })
-  apiKeyHeader: string;
+    @SpeakeasyMetadata({
+        data: "security, scheme=true;type=apiKey;subtype=header;name=Authorization",
+    })
+    apiKeyHeader: string;
 }
 
 export class IncrementViewCountRequest extends SpeakeasyBase {
-  /**
-   * ID of a form
-   */
-  @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
-  id: string;
+    /**
+     * ID of a form
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+    id: string;
 }
 
 export class IncrementViewCountResponse extends SpeakeasyBase {
-  /**
-   * Unauthorized
-   */
-  @SpeakeasyMetadata()
-  apiException?: shared.ApiException;
+    /**
+     * Unauthorized
+     */
+    @SpeakeasyMetadata()
+    apiException?: shared.ApiException;
 
-  /**
-   * Successful Response
-   */
-  @SpeakeasyMetadata()
-  apiStatusResponse?: shared.ApiStatusResponse;
+    /**
+     * Successful Response
+     */
+    @SpeakeasyMetadata()
+    apiStatusResponse?: shared.ApiStatusResponse;
 
-  @SpeakeasyMetadata()
-  body?: Uint8Array;
+    @SpeakeasyMetadata()
+    body?: Uint8Array;
 
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

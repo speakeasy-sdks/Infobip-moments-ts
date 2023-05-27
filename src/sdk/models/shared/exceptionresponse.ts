@@ -25,11 +25,11 @@ import { Expose } from "class-transformer";
  * </table>
  */
 export class ExceptionResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "errorCode" })
-  errorCode?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "errorCode" })
+    errorCode?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "errorMessage" })
-  errorMessage?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "errorMessage" })
+    errorMessage?: string;
 }

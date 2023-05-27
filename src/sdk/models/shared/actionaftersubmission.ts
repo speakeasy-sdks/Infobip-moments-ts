@@ -6,19 +6,19 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export enum ActionAfterSubmissionType {
-  Redirect = "REDIRECT",
-  Message = "MESSAGE",
+    Redirect = "REDIRECT",
+    Message = "MESSAGE",
 }
 
 /**
  * Action after the submission
  */
 export class ActionAfterSubmission extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type: ActionAfterSubmissionType;
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type: ActionAfterSubmissionType;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "value" })
-  value: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "value" })
+    value: string;
 }

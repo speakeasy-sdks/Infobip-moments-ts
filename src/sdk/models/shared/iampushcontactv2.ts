@@ -6,23 +6,23 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class IamPushContactV2 extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "additionalData" })
-  additionalData?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "additionalData" })
+    additionalData?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "isPrimary" })
-  isPrimary?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "isPrimary" })
+    isPrimary?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "registrationId" })
-  registrationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "registrationId" })
+    registrationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "systemData" })
-  systemData?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "systemData" })
+    systemData?: Record<string, Record<string, any>>;
 }

@@ -8,142 +8,142 @@ import { IamIntegrationsV2 } from "./iamintegrationsv2";
 import { Expose, Type } from "class-transformer";
 
 export enum IamPersonV2Gender {
-  Male = "MALE",
-  Female = "FEMALE",
+    Male = "MALE",
+    Female = "FEMALE",
 }
 
 export enum IamPersonV2ModifiedFrom {
-  Api = "API",
-  Portal = "PORTAL",
-  WebSDK = "WEB_SDK",
-  Integration = "INTEGRATION",
-  Push = "PUSH",
-  Facebook = "FACEBOOK",
-  Line = "LINE",
-  Telegram = "TELEGRAM",
-  Salesforce = "SALESFORCE",
-  Dynamics = "DYNAMICS",
-  Zapier = "ZAPIER",
-  Forms = "FORMS",
-  Ams = "AMS",
-  Computed = "COMPUTED",
-  Answers = "ANSWERS",
-  Conversations = "CONVERSATIONS",
+    Api = "API",
+    Portal = "PORTAL",
+    WebSDK = "WEB_SDK",
+    Integration = "INTEGRATION",
+    Push = "PUSH",
+    Facebook = "FACEBOOK",
+    Line = "LINE",
+    Telegram = "TELEGRAM",
+    Salesforce = "SALESFORCE",
+    Dynamics = "DYNAMICS",
+    Zapier = "ZAPIER",
+    Forms = "FORMS",
+    Ams = "AMS",
+    Computed = "COMPUTED",
+    Answers = "ANSWERS",
+    Conversations = "CONVERSATIONS",
 }
 
 export enum IamPersonV2Origin {
-  Api = "API",
-  Portal = "PORTAL",
-  WebSDK = "WEB_SDK",
-  Integration = "INTEGRATION",
-  Push = "PUSH",
-  Facebook = "FACEBOOK",
-  Line = "LINE",
-  Telegram = "TELEGRAM",
-  Salesforce = "SALESFORCE",
-  Dynamics = "DYNAMICS",
-  Zapier = "ZAPIER",
-  Forms = "FORMS",
-  Ams = "AMS",
-  Computed = "COMPUTED",
-  Answers = "ANSWERS",
-  Conversations = "CONVERSATIONS",
+    Api = "API",
+    Portal = "PORTAL",
+    WebSDK = "WEB_SDK",
+    Integration = "INTEGRATION",
+    Push = "PUSH",
+    Facebook = "FACEBOOK",
+    Line = "LINE",
+    Telegram = "TELEGRAM",
+    Salesforce = "SALESFORCE",
+    Dynamics = "DYNAMICS",
+    Zapier = "ZAPIER",
+    Forms = "FORMS",
+    Ams = "AMS",
+    Computed = "COMPUTED",
+    Answers = "ANSWERS",
+    Conversations = "CONVERSATIONS",
 }
 
 export enum IamPersonV2Type {
-  Customer = "CUSTOMER",
-  Lead = "LEAD",
-  Agent = "AGENT",
+    Customer = "CUSTOMER",
+    Lead = "LEAD",
+    Agent = "AGENT",
 }
 
 export class IamPersonV2 extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "address" })
-  address?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "address" })
+    address?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "birthDate" })
-  birthDate?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "birthDate" })
+    birthDate?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "city" })
-  city?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "city" })
+    city?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "companyId" })
-  companyId?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "companyId" })
+    companyId?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "computedAttributes" })
-  computedAttributes?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "computedAttributes" })
+    computedAttributes?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "contactInformation" })
-  @Type(() => IamContactV2)
-  contactInformation: IamContactV2;
+    @SpeakeasyMetadata()
+    @Expose({ name: "contactInformation" })
+    @Type(() => IamContactV2)
+    contactInformation: IamContactV2;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "country" })
-  country?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "country" })
+    country?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "createdAt" })
-  createdAt?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "createdAt" })
+    createdAt?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "customAttributes" })
-  customAttributes?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "customAttributes" })
+    customAttributes?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "externalId" })
-  externalId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "externalId" })
+    externalId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "firstName" })
-  firstName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "firstName" })
+    firstName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "gender" })
-  gender?: IamPersonV2Gender;
+    @SpeakeasyMetadata()
+    @Expose({ name: "gender" })
+    gender?: IamPersonV2Gender;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id?: number;
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: number;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "integrations" })
-  @Type(() => IamIntegrationsV2)
-  integrations?: IamIntegrationsV2;
+    @SpeakeasyMetadata()
+    @Expose({ name: "integrations" })
+    @Type(() => IamIntegrationsV2)
+    integrations?: IamIntegrationsV2;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "lastName" })
-  lastName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "lastName" })
+    lastName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "middleName" })
-  middleName?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "middleName" })
+    middleName?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "modifiedAt" })
-  modifiedAt?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "modifiedAt" })
+    modifiedAt?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "modifiedFrom" })
-  modifiedFrom?: IamPersonV2ModifiedFrom;
+    @SpeakeasyMetadata()
+    @Expose({ name: "modifiedFrom" })
+    modifiedFrom?: IamPersonV2ModifiedFrom;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "origin" })
-  origin?: IamPersonV2Origin;
+    @SpeakeasyMetadata()
+    @Expose({ name: "origin" })
+    origin?: IamPersonV2Origin;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "profilePicture" })
-  profilePicture?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "profilePicture" })
+    profilePicture?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "tags" })
-  tags?: string[];
+    @SpeakeasyMetadata()
+    @Expose({ name: "tags" })
+    tags?: string[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "type" })
-  type?: IamPersonV2Type;
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: IamPersonV2Type;
 }

@@ -6,15 +6,15 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export class IamLineContact extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "applicationId" })
-  applicationId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "applicationId" })
+    applicationId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "systemData" })
-  systemData?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "systemData" })
+    systemData?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "userId" })
-  userId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "userId" })
+    userId?: string;
 }

@@ -7,8 +7,8 @@ import { IamSalesforceV2 } from "./iamsalesforcev2";
 import { Expose, Type } from "class-transformer";
 
 export class IamIntegrationsV2 extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "salesforce" })
-  @Type(() => IamSalesforceV2)
-  salesforce?: IamSalesforceV2;
+    @SpeakeasyMetadata()
+    @Expose({ name: "salesforce" })
+    @Type(() => IamSalesforceV2)
+    salesforce?: IamSalesforceV2;
 }

@@ -7,81 +7,71 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class RemovePeopleFromFlowSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=apiKey;subtype=header;name=Authorization",
-  })
-  apiKeyHeader?: string;
+    @SpeakeasyMetadata({
+        data: "security, scheme=true;type=apiKey;subtype=header;name=Authorization",
+    })
+    apiKeyHeader?: string;
 
-  @SpeakeasyMetadata({ data: "security, scheme=true;type=http;subtype=basic" })
-  basic?: shared.SchemeBasic;
+    @SpeakeasyMetadata({ data: "security, scheme=true;type=http;subtype=basic" })
+    basic?: shared.SchemeBasic;
 
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=apiKey;subtype=header;name=Authorization",
-  })
-  ibssoTokenHeader?: string;
+    @SpeakeasyMetadata({
+        data: "security, scheme=true;type=apiKey;subtype=header;name=Authorization",
+    })
+    ibssoTokenHeader?: string;
 
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=oauth2;name=Authorization",
-  })
-  oAuth2?: string;
+    @SpeakeasyMetadata({ data: "security, scheme=true;type=oauth2;name=Authorization" })
+    oAuth2?: string;
 }
 
 export class RemovePeopleFromFlowRequest extends SpeakeasyBase {
-  /**
-   * Unique identifier of the flow that person will be removed from
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=campaignId",
-  })
-  campaignId: number;
+    /**
+     * Unique identifier of the flow that person will be removed from
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=campaignId" })
+    campaignId: number;
 
-  /**
-   * Person's email address
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=email" })
-  email?: string;
+    /**
+     * Person's email address
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=email" })
+    email?: string;
 
-  /**
-   * Unique ID for the person from an external system
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=externalId",
-  })
-  externalId?: string;
+    /**
+     * Unique ID for the person from an external system
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=externalId" })
+    externalId?: string;
 
-  /**
-   * Person's phone number
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=phone" })
-  phone?: string;
+    /**
+     * Person's phone number
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=phone" })
+    phone?: string;
 
-  /**
-   * Unique ID for push registration
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=pushRegistrationId",
-  })
-  pushRegistrationId?: string;
+    /**
+     * Unique ID for push registration
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=pushRegistrationId" })
+    pushRegistrationId?: string;
 
-  @SpeakeasyMetadata({
-    data: "header, style=simple;explode=false;name=x-request-start",
-  })
-  xRequestStart?: string;
+    @SpeakeasyMetadata({ data: "header, style=simple;explode=false;name=x-request-start" })
+    xRequestStart?: string;
 }
 
 export class RemovePeopleFromFlowResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  /**
-   * Bad Request
-   */
-  @SpeakeasyMetadata()
-  exceptionResponse?: shared.ExceptionResponse;
+    /**
+     * Bad Request
+     */
+    @SpeakeasyMetadata()
+    exceptionResponse?: shared.ExceptionResponse;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 }

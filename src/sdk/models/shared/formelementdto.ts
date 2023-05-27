@@ -8,79 +8,79 @@ import { ValidationRules } from "./validationrules";
 import { Expose, Type } from "class-transformer";
 
 export enum FormElementDtoComponent {
-  Text = "TEXT",
-  Textarea = "TEXTAREA",
-  Number = "NUMBER",
-  Dropdown = "DROPDOWN",
-  Checkbox = "CHECKBOX",
-  CheckboxGroup = "CHECKBOX_GROUP",
-  Radiobutton = "RADIOBUTTON",
-  Date = "DATE",
-  Datetime = "DATETIME",
-  Email = "EMAIL",
-  Msisdn = "MSISDN",
-  SubmitButton = "SUBMIT_BUTTON",
-  Title = "TITLE",
-  Description = "DESCRIPTION",
-  AppleSplash = "APPLE_SPLASH",
-  AppleBoolean = "APPLE_BOOLEAN",
+    Text = "TEXT",
+    Textarea = "TEXTAREA",
+    Number = "NUMBER",
+    Dropdown = "DROPDOWN",
+    Checkbox = "CHECKBOX",
+    CheckboxGroup = "CHECKBOX_GROUP",
+    Radiobutton = "RADIOBUTTON",
+    Date = "DATE",
+    Datetime = "DATETIME",
+    Email = "EMAIL",
+    Msisdn = "MSISDN",
+    SubmitButton = "SUBMIT_BUTTON",
+    Title = "TITLE",
+    Description = "DESCRIPTION",
+    AppleSplash = "APPLE_SPLASH",
+    AppleBoolean = "APPLE_BOOLEAN",
 }
 
 /**
  * List of form fields
  */
 export class FormElementDto extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "additionalConfiguration" })
-  additionalConfiguration?: Record<string, string>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "additionalConfiguration" })
+    additionalConfiguration?: Record<string, string>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "checkboxText" })
-  checkboxText?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "checkboxText" })
+    checkboxText?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "component" })
-  component: FormElementDtoComponent;
+    @SpeakeasyMetadata()
+    @Expose({ name: "component" })
+    component: FormElementDtoComponent;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "fieldId" })
-  fieldId?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "fieldId" })
+    fieldId?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "isHidden" })
-  isHidden?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "isHidden" })
+    isHidden?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "isRequired" })
-  isRequired?: boolean;
+    @SpeakeasyMetadata()
+    @Expose({ name: "isRequired" })
+    isRequired?: boolean;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "label" })
-  label?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "label" })
+    label?: string;
 
-  @SpeakeasyMetadata({ elemType: FormElementOptionDto })
-  @Expose({ name: "options" })
-  @Type(() => FormElementOptionDto)
-  options?: FormElementOptionDto[];
+    @SpeakeasyMetadata({ elemType: FormElementOptionDto })
+    @Expose({ name: "options" })
+    @Type(() => FormElementOptionDto)
+    options?: FormElementOptionDto[];
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "personField" })
-  personField?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "personField" })
+    personField?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "placeholder" })
-  placeholder?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "placeholder" })
+    placeholder?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "textContent" })
-  textContent?: string;
+    @SpeakeasyMetadata()
+    @Expose({ name: "textContent" })
+    textContent?: string;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "validationMessages" })
-  validationMessages?: Record<string, string>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "validationMessages" })
+    validationMessages?: Record<string, string>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "validationRules" })
-  @Type(() => ValidationRules)
-  validationRules?: ValidationRules;
+    @SpeakeasyMetadata()
+    @Expose({ name: "validationRules" })
+    @Type(() => ValidationRules)
+    validationRules?: ValidationRules;
 }

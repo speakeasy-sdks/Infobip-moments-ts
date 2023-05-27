@@ -10,12 +10,12 @@ import { Expose, Type } from "class-transformer";
  * Contains the data used for person creation (if it does not exist) or partial update (if it exists)
  */
 export class FlowPersonRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "flowVariables" })
-  flowVariables?: Record<string, Record<string, any>>;
+    @SpeakeasyMetadata()
+    @Expose({ name: "flowVariables" })
+    flowVariables?: Record<string, Record<string, any>>;
 
-  @SpeakeasyMetadata()
-  @Expose({ name: "personData" })
-  @Type(() => IamPersonV2)
-  personData: IamPersonV2;
+    @SpeakeasyMetadata()
+    @Expose({ name: "personData" })
+    @Type(() => IamPersonV2)
+    personData: IamPersonV2;
 }

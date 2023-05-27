@@ -11,56 +11,56 @@ import { Expose, Transform, Type } from "class-transformer";
  * Successful Response
  */
 export class ApiFormDto extends SpeakeasyBase {
-  /**
-   * Action after the submission
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "actionAfterSubmission" })
-  @Type(() => ActionAfterSubmission)
-  actionAfterSubmission?: ActionAfterSubmission;
+    /**
+     * Action after the submission
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "actionAfterSubmission" })
+    @Type(() => ActionAfterSubmission)
+    actionAfterSubmission?: ActionAfterSubmission;
 
-  /**
-   * Time when form was created
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "createdAt" })
-  @Transform(({ value }) => new Date(value), { toClassOnly: true })
-  createdAt?: Date;
+    /**
+     * Time when form was created
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "createdAt" })
+    @Transform(({ value }) => new Date(value), { toClassOnly: true })
+    createdAt?: Date;
 
-  /**
-   * List of form fields
-   */
-  @SpeakeasyMetadata({ elemType: FormElementDto })
-  @Expose({ name: "elements" })
-  @Type(() => FormElementDto)
-  elements: FormElementDto[];
+    /**
+     * List of form fields
+     */
+    @SpeakeasyMetadata({ elemType: FormElementDto })
+    @Expose({ name: "elements" })
+    @Type(() => FormElementDto)
+    elements: FormElementDto[];
 
-  /**
-   * Form identifier
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "id" })
-  id: string;
+    /**
+     * Form identifier
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id: string;
 
-  /**
-   * Form name
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "name" })
-  name: string;
+    /**
+     * Form name
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name: string;
 
-  /**
-   * Can resubmit multiple times
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "resubmitEnabled" })
-  resubmitEnabled: boolean;
+    /**
+     * Can resubmit multiple times
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "resubmitEnabled" })
+    resubmitEnabled: boolean;
 
-  /**
-   * Time when form was update last time
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "updatedAt" })
-  @Transform(({ value }) => new Date(value), { toClassOnly: true })
-  updatedAt?: Date;
+    /**
+     * Time when form was update last time
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "updatedAt" })
+    @Transform(({ value }) => new Date(value), { toClassOnly: true })
+    updatedAt?: Date;
 }

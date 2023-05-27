@@ -10,8 +10,8 @@ import { Expose, Type } from "class-transformer";
  * Bad Request
  */
 export class ApiException extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  @Expose({ name: "requestError" })
-  @Type(() => ApiRequestError)
-  requestError?: ApiRequestError;
+    @SpeakeasyMetadata()
+    @Expose({ name: "requestError" })
+    @Type(() => ApiRequestError)
+    requestError?: ApiRequestError;
 }

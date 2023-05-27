@@ -16,53 +16,53 @@ import { IamViberBotsContact } from "./iamviberbotscontact";
 import { Expose, Type } from "class-transformer";
 
 export class IamContactV2 extends SpeakeasyBase {
-  @SpeakeasyMetadata({ elemType: IamEmailContact })
-  @Expose({ name: "email" })
-  @Type(() => IamEmailContact)
-  email?: IamEmailContact[];
+    @SpeakeasyMetadata({ elemType: IamEmailContact })
+    @Expose({ name: "email" })
+    @Type(() => IamEmailContact)
+    email?: IamEmailContact[];
 
-  @SpeakeasyMetadata({ elemType: IamFacebookContact })
-  @Expose({ name: "facebook" })
-  @Type(() => IamFacebookContact)
-  facebook?: IamFacebookContact[];
+    @SpeakeasyMetadata({ elemType: IamFacebookContact })
+    @Expose({ name: "facebook" })
+    @Type(() => IamFacebookContact)
+    facebook?: IamFacebookContact[];
 
-  @SpeakeasyMetadata({ elemType: IamInstagramContact })
-  @Expose({ name: "instagram" })
-  @Type(() => IamInstagramContact)
-  instagram?: IamInstagramContact[];
+    @SpeakeasyMetadata({ elemType: IamInstagramContact })
+    @Expose({ name: "instagram" })
+    @Type(() => IamInstagramContact)
+    instagram?: IamInstagramContact[];
 
-  @SpeakeasyMetadata({ elemType: IamLineContact })
-  @Expose({ name: "line" })
-  @Type(() => IamLineContact)
-  line?: IamLineContact[];
+    @SpeakeasyMetadata({ elemType: IamLineContact })
+    @Expose({ name: "line" })
+    @Type(() => IamLineContact)
+    line?: IamLineContact[];
 
-  @SpeakeasyMetadata({ elemType: IamLiveChatContact })
-  @Expose({ name: "liveChat" })
-  @Type(() => IamLiveChatContact)
-  liveChat?: IamLiveChatContact[];
+    @SpeakeasyMetadata({ elemType: IamLiveChatContact })
+    @Expose({ name: "liveChat" })
+    @Type(() => IamLiveChatContact)
+    liveChat?: IamLiveChatContact[];
 
-  @SpeakeasyMetadata({ elemType: IamPhoneContact })
-  @Expose({ name: "phone" })
-  @Type(() => IamPhoneContact)
-  phone?: IamPhoneContact[];
+    @SpeakeasyMetadata({ elemType: IamPhoneContact })
+    @Expose({ name: "phone" })
+    @Type(() => IamPhoneContact)
+    phone?: IamPhoneContact[];
 
-  @SpeakeasyMetadata({ elemType: IamPushContactV2 })
-  @Expose({ name: "push" })
-  @Type(() => IamPushContactV2)
-  push?: IamPushContactV2[];
+    @SpeakeasyMetadata({ elemType: IamPushContactV2 })
+    @Expose({ name: "push" })
+    @Type(() => IamPushContactV2)
+    push?: IamPushContactV2[];
 
-  @SpeakeasyMetadata({ elemType: IamTelegramContact })
-  @Expose({ name: "telegram" })
-  @Type(() => IamTelegramContact)
-  telegram?: IamTelegramContact[];
+    @SpeakeasyMetadata({ elemType: IamTelegramContact })
+    @Expose({ name: "telegram" })
+    @Type(() => IamTelegramContact)
+    telegram?: IamTelegramContact[];
 
-  @SpeakeasyMetadata({ elemType: IamTwitterContact })
-  @Expose({ name: "twitter" })
-  @Type(() => IamTwitterContact)
-  twitter?: IamTwitterContact[];
+    @SpeakeasyMetadata({ elemType: IamTwitterContact })
+    @Expose({ name: "twitter" })
+    @Type(() => IamTwitterContact)
+    twitter?: IamTwitterContact[];
 
-  @SpeakeasyMetadata({ elemType: IamViberBotsContact })
-  @Expose({ name: "viberBots" })
-  @Type(() => IamViberBotsContact)
-  viberBots?: IamViberBotsContact[];
+    @SpeakeasyMetadata({ elemType: IamViberBotsContact })
+    @Expose({ name: "viberBots" })
+    @Type(() => IamViberBotsContact)
+    viberBots?: IamViberBotsContact[];
 }
