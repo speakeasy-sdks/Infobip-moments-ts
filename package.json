@@ -1,6 +1,6 @@
 {
   "name": "infobip-moments",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": "Infobip",
   "scripts": {
     "prepare": "tsc --build"
