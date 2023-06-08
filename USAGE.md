@@ -7,7 +7,7 @@ import { ActionAfterSubmissionType, FormElementDtoComponent } from "infobip-mome
 const sdk = new Infobip();
 
 sdk.moments.getForms({
-  ibssoTokenHeader: "YOUR_API_KEY_HERE",
+  ibssoTokenHeader: "",
 }, 548814, 592845).then((res: GetFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response

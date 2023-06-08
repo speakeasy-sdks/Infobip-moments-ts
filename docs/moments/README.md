@@ -558,7 +558,7 @@ sdk.moments.addPeopleToFlow({
   pushRegistrationId: "eum",
   xRequestStart: "autem",
 }, {
-  apiKeyHeader: "YOUR_API_KEY_HERE",
+  apiKeyHeader: "",
 }).then((res: AddPeopleToFlowResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -580,7 +580,7 @@ import { ActionAfterSubmissionType, FormElementDtoComponent } from "infobip-mome
 const sdk = new Infobip();
 
 sdk.moments.getForm({
-  apiKeyHeader: "YOUR_API_KEY_HERE",
+  apiKeyHeader: "",
 }, "nobis").then((res: GetFormResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -602,7 +602,7 @@ import { ActionAfterSubmissionType, FormElementDtoComponent } from "infobip-mome
 const sdk = new Infobip();
 
 sdk.moments.getForms({
-  ibssoTokenHeader: "YOUR_API_KEY_HERE",
+  ibssoTokenHeader: "",
 }, 557369, 829603).then((res: GetFormsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -623,7 +623,7 @@ import { IncrementViewCountResponse } from "infobip-moments/dist/sdk/models/oper
 const sdk = new Infobip();
 
 sdk.moments.incrementViewCount({
-  apiKeyHeader: "YOUR_API_KEY_HERE",
+  apiKeyHeader: "",
 }, "nulla").then((res: IncrementViewCountResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -651,7 +651,7 @@ sdk.moments.removePeopleFromFlow({
   pushRegistrationId: "fugiat",
   xRequestStart: "ut",
 }, {
-  apiKeyHeader: "YOUR_API_KEY_HERE",
+  apiKeyHeader: "",
 }).then((res: RemovePeopleFromFlowResponse) => {
   if (res.statusCode == 200) {
     // handle response
