@@ -1,0 +1,10 @@
+# IamLiveChatContact
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `applicationId`                                                                                     | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `systemData`                                                                                        | Record<string, [IamLiveChatContactSystemData](../../models/shared/iamlivechatcontactsystemdata.md)> | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `userId`                                                                                            | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |

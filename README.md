@@ -48,13 +48,13 @@ sdk.moments.getForms({
 ## Available Resources and Operations
 
 
-### [moments](docs/moments/README.md)
+### [moments](docs/sdks/moments/README.md)
 
-* [addPeopleToFlow](docs/moments/README.md#addpeopletoflow) - Add Person to Flow
-* [getForm](docs/moments/README.md#getform) - Get form
-* [getForms](docs/moments/README.md#getforms) - Get forms
-* [incrementViewCount](docs/moments/README.md#incrementviewcount) - Increment form view count
-* [removePeopleFromFlow](docs/moments/README.md#removepeoplefromflow) - Remove Person from Flow
+* [addPeopleToFlow](docs/sdks/moments/README.md#addpeopletoflow) - Add Person to Flow
+* [getForm](docs/sdks/moments/README.md#getform) - Get form
+* [getForms](docs/sdks/moments/README.md#getforms) - Get forms
+* [incrementViewCount](docs/sdks/moments/README.md#incrementviewcount) - Increment form view count
+* [removePeopleFromFlow](docs/sdks/moments/README.md#removepeoplefromflow) - Remove Person from Flow
 <!-- End SDK Available Operations -->
 
 ### Maturity

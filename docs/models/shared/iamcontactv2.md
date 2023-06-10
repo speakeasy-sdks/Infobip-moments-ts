@@ -1,0 +1,17 @@
+# IamContactV2
+
+
+## Fields
+
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `email`                                                             | [IamEmailContact](../../models/shared/iamemailcontact.md)[]         | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `facebook`                                                          | [IamFacebookContact](../../models/shared/iamfacebookcontact.md)[]   | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `instagram`                                                         | [IamInstagramContact](../../models/shared/iaminstagramcontact.md)[] | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `line`                                                              | [IamLineContact](../../models/shared/iamlinecontact.md)[]           | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `liveChat`                                                          | [IamLiveChatContact](../../models/shared/iamlivechatcontact.md)[]   | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `phone`                                                             | [IamPhoneContact](../../models/shared/iamphonecontact.md)[]         | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `push`                                                              | [IamPushContactV2](../../models/shared/iampushcontactv2.md)[]       | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `telegram`                                                          | [IamTelegramContact](../../models/shared/iamtelegramcontact.md)[]   | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `twitter`                                                           | [IamTwitterContact](../../models/shared/iamtwittercontact.md)[]     | :heavy_minus_sign:                                                  | N/A                                                                 |
+| `viberBots`                                                         | [IamViberBotsContact](../../models/shared/iamviberbotscontact.md)[] | :heavy_minus_sign:                                                  | N/A                                                                 |

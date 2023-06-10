@@ -1,0 +1,10 @@
+# IamFacebookContact
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `applicationId`                                                                                     | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `systemData`                                                                                        | Record<string, [IamFacebookContactSystemData](../../models/shared/iamfacebookcontactsystemdata.md)> | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `userId`                                                                                            | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
